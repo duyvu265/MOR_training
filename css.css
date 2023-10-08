@@ -27,7 +27,6 @@ body {
   width: 25%;
   display: flex;
   justify-content: flex-end;
-  padding: 20;
 }
 
 .left-item {
@@ -147,7 +146,7 @@ body {
 
 .top-description {
   width: 50%;
-  color: #fff; 
+  color: #fff;
 }
 
 .btn-content {
@@ -217,7 +216,6 @@ body {
   max-width: 1920px;
 }
 
-
 .li-project {
   width: 100%;
   display: flex;
@@ -226,7 +224,6 @@ body {
   box-sizing: border-box;
 }
 
-
 .project-item {
   width: calc(100% / 3);
   height: 230px;
@@ -234,13 +231,11 @@ body {
   position: relative;
 }
 
-
 .size-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 
 .portfolio-box-caption {
   width: 100%;
@@ -342,7 +337,6 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
-  
 }
 
 .textarea {
@@ -436,7 +430,6 @@ body {
   }
 }
 
-
 /* mobile <= 767 */
 @media only screen and (max-width: 767px) {
   .navbar {
@@ -444,13 +437,22 @@ body {
     display: flex;
     justify-content: space-around;
   }
+  .head-content {
+    height: 80%;
 
+    align-items: center;
+    display: flex;
+  }
+  .navbar-left {
+    width: 50%;
+  }
   .navbar-right {
     display: none !important;
   }
 
   .btn-nav {
-    color: #363d47;
+    text-align: center;
+    color: #474736;
   }
 
   .icon-menu {
@@ -459,34 +461,44 @@ body {
   }
 
   .gg-menu {
+    margin-right: 10px;
     justify-content: flex-end;
   }
 
   .head {
-    height: 58.4vh;
   }
 
-  .head-content {
+  /* .C {
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+  } */
 
   .title {
-    text-align: center;
     width: 80%;
+    height: 50%;
+    background-color: #363d47;
   }
-
+  .title-text {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .content-text {
     text-align: center;
-    font-size: 15px;
+    font-size: 18px;
     color: #fff;
   }
 
   .btn-content {
     margin: 15px;
   }
-
+  .description {
+    width: 80%;
+    background-color: #363d47;
+  }
   .description-title-area {
     height: 8%;
     margin-bottom: 30px;
