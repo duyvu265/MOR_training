@@ -1,0 +1,40 @@
+.content {
+  height: 500px;
+  align-items: center;
+  justify-content: center;
+}
+.content-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.kq {
+  width: 100%;
+}
+.display-result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: 20px;
+}
+.result-area {
+  width: 10%;
+}
+.list-key {
+  align-items: center;
+  justify-content: space-around;
+}
+.list-group.list-group-horizontal {
+  border: none;
+  padding: 1px;
+}
+.list-group-item {
+  border: none;
+  padding: 3px;
+}
+.btn.btn-secondary,
+.btn.btn-light {
+  width: 100px;
+}

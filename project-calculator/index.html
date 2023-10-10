@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <h1 style="text-align: center;"> Calculator</h1>
+    <div class="content-fluid">
+        <div class="kq">
+            <div class="display-result">
+                <div class="result-area">
+                    <div id="result" value= 0 ? result : 0 class="result"></div>
+                </div>
+            </div>
+        </div>
+        <div class="list-key">
+            <ul class="list-group list-group-horizontal ">
+                <li class="list-group-item ">
+                    <button onclick="ClickButton()" id="(" type="button" class="btn btn-secondary">(</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id=")" type="button" class="btn btn-secondary">)</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="%" type="button" class="btn btn-secondary">%</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="CE" type="button" class="btn btn-secondary">CE</button>
+                </li>
+            </ul>
+            <ul class="list-group list-group-horizontal-sm">
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="7" type="button" class="btn btn-light">7</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="8" type="button" class="btn btn-light">8</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="9" type="button" class="btn btn-light">9</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="/" type="button" class="btn btn-secondary"> ÷ </button>
+                </li>
+            </ul>
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="4" type="button" class="btn btn-light">4</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="5" type="button" class="btn btn-light">5</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="6" type="button" class="btn btn-light">6</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="*" type="button" class="btn btn-secondary">*</button>
+                </li>
+            </ul>
+
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="1" type="button" class="btn btn-light">1</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="2" type="button" class="btn btn-light">2</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="3" type="button" class="btn btn-light">3</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="-" type="button" class="btn btn-secondary">-</button>
+                </li>
+            </ul>
+            <ul class="list-group list-group-horizontal-sm">
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="0" type="button" class="btn btn-light">0</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="." type="button" class="btn btn-light">.</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="=" type="button" class="btn btn-secondary">=</button>
+                </li>
+                <li class="list-group-item">
+                    <button onclick="ClickButton()" id="+" type="button" class="btn btn-secondary">+</button>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <script>
+
+
+        function ClickButton() {
+            if (event.target.id === "CE") {
+                document.getElementById("result").innerHTML = 0;
+            }
+            if (event.target.id == "+" ||
+                event.target.id == "-" ||
+                event.target.id == "*" ||
+                event.target.id == "/" ||
+                event.target.id == "%" ||
+                event.target.id == "7" ||
+                event.target.id == "8" ||
+                event.target.id == "9" ||
+                event.target.id == "4" ||
+                event.target.id == "5" ||
+                event.target.id == "6" ||
+                event.target.id == "1" ||
+                event.target.id == "2" ||
+                event.target.id == "3") {
+                 document.getElementById("result").innerHTML += event.target.id;
+                // document.getElementById("result").id.innerHTML += event.target.id;
+                console.log(result);
+
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>
