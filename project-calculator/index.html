@@ -11,6 +11,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css.css">
+    <script src="calculator.js"> </script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
         <div class="kq">
             <div class="display-result">
                 <div class="result-area">
-                    <div id="result" value= 0 ? result : 0 class="result"></div>
+                    <div id="result" value=0 ? result : 0 class="result"></div>
                 </div>
             </div>
         </div>
@@ -49,7 +50,7 @@
                     <button onclick="ClickButton()" id="9" type="button" class="btn btn-light">9</button>
                 </li>
                 <li class="list-group-item">
-                    <button onclick="ClickButton()" id="/" type="button" class="btn btn-secondary"> ÷ </button>
+                    <button onclick="ClickButton()" id="/" type="button" class="btn btn-secondary"> / </button>
                 </li>
             </ul>
             <ul class="list-group list-group-horizontal">
@@ -98,35 +99,6 @@
         </div>
 
     </div>
-    <script>
-
-
-        function ClickButton() {
-            if (event.target.id === "CE") {
-                document.getElementById("result").innerHTML = 0;
-            }
-            if (event.target.id == "+" ||
-                event.target.id == "-" ||
-                event.target.id == "*" ||
-                event.target.id == "/" ||
-                event.target.id == "%" ||
-                event.target.id == "7" ||
-                event.target.id == "8" ||
-                event.target.id == "9" ||
-                event.target.id == "4" ||
-                event.target.id == "5" ||
-                event.target.id == "6" ||
-                event.target.id == "1" ||
-                event.target.id == "2" ||
-                event.target.id == "3") {
-                 document.getElementById("result").innerHTML += event.target.id;
-                // document.getElementById("result").id.innerHTML += event.target.id;
-                console.log(result);
-
-
-            }
-        }
-    </script>
 
 </body>
 
