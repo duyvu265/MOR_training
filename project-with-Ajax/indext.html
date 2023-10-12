@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css.css">
+    <script src='https://cdn.plot.ly/plotly-2.26.0.min.js'></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="container-sm">
+        <div class="content">
+            <div class="left">
+                <nav class="navbar navbar-light bg-light">
+                    <div class="container-fluid">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-crosshair" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8.5.5a.5.5 0 0 0-1 0v.518A7.001 7.001 0 0 0 1.018 7.5H.5a.5.5 0 0 0 0 1h.518A7.001 7.001 0 0 0 7.5 14.982v.518a.5.5 0 0 0 1 0v-.518A7.001 7.001 0 0 0 14.982 8.5h.518a.5.5 0 0 0 0-1h-.518A7.001 7.001 0 0 0 8.5 1.018V.5Zm-6.48 7A6.001 6.001 0 0 1 7.5 2.02v.48a.5.5 0 0 0 1 0v-.48a6.001 6.001 0 0 1 5.48 5.48h-.48a.5.5 0 0 0 0 1h.48a6.002 6.002 0 0 1-5.48 5.48v-.48a.5.5 0 0 0-1 0v.48A6.001 6.001 0 0 1 2.02 8.5h.48a.5.5 0 0 0 0-1h-.48ZM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+                <div class="image-size">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe758Vfz2rFN5BI2vYHqY5ofwO029ovZ0-mw&usqp=CAU"
+                        alt="">
+                </div>
+                <div class="weather-calendar">
+                    <div class="weather">
+                        <p style="text-align: center" class="display-1">12</p>
+                    </div>
+                    <div class="calendar">
+                        <p style="text-align: center;" class="display-6">Monday ,16:00</p>
+                    </div>
+
+                </div>
+                <div class="map-image">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3939393939393!2d106.69999999999999!3d10.799999999999999!2m3"></iframe>
+
+                </div>
+
+            </div>
+            <div class="right">
+                <div class="nav nav-tabs">
+                    <div class="li-nav">
+                        <div class="nav-item">
+                            <div class="today-week">
+                                <button type="button" class="btn btn-outline">Primary</button>
+                                <button type="button" class="btn btn-outline">Secondary</button>
+                            </div>
+                        </div>
+                        <div class="nav-item">
+                            <div class="profile">
+                                <button type="button" class="btn btn-outline-dark">°C</button>
+                                <button type="button" class="btn btn-outline-dark">°F </button>
+                                <div class="avatar"><img class="b_favImg"
+                                        src="https://www.bing.com/th?q=Activities+in+Hà+Nội+in+cloudy+weather&w=42&h=42&c=1&o=6&pid=lgWeatherUpsell"
+                                        alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="li-weather">
+                    <div class="card-area">
+                        <div class="card">
+                            <p>Sun</p>
+                            <div class="card-body">
+                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
+                                    class="card-img-top" alt="...">
+                                <p class="card-text">15.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <p>Mon</p>
+                            <div class="card-body">
+                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
+                                    class="card-img-top" alt="...">
+                                <p class="card-text">12</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <p>Tue</p>
+                            <div class="card-body">
+                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
+                                    class="card-img-top" alt="...">
+                                <p class="card-text">9</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <p>Wed</p>
+                            <div class="card-body">
+                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
+                                    class="card-img-top" alt="...">
+                                <p class="card-text">8</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <p>Thu</p>
+                            <div class="card-body">
+                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
+                                    class="card-img-top" alt="...">
+                                <p class="card-text">5.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <p>Fri</p>
+                            <div class="card-body">
+                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
+                                    class="card-img-top" alt="...">
+                                <p class="card-text">4</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <p>Sat</p>
+                            <div class="card-body">
+                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
+                                    class="card-img-top" alt="...">
+                                <p class="card-text">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="title display-5">Today's Highlights</div>
+                <!-- <div class="description-weather">
+                    <div class="li-description">
+                        <div class="description-item">
+                            <div class="card mb-3">
+                                <div id="myDiv"></div>
+                            </div>
+                        </div>
+                        <div class="description-item">
+                            <div class="card mb-3"></div>
+                        </div>
+                        <div class="description-item">
+                            <div class="card mb-3"></div>
+                        </div>
+                        <div class="description-item">
+                            <div class="card mb-3"></div>
+                        </div>
+                        <div class="description-item">
+                            <div class="card mb-3"></div>
+                        </div>
+                        <div class="description-item">
+                            <div class="card mb-3"></div>
+                        </div>
+
+                    </div>
+                </div> -->
+                <div class="description-weather">
+                    <div class="li-description">
+                        <div class="description-item">
+                            <div class="description-item" id="myDiv"></div>
+                        </div>
+                        <div class="description-item">
+                            <div class="description-item"></div>
+                        </div>
+                        <div class="description-item">
+                            <div></div>
+
+                        </div>
+
+                    </div>
+                    <div class="li-description">
+                        <div class="description-item">
+                            <div></div>
+                        </div>
+                        <div class="description-item">
+                            <div></div>
+                        </div>
+                        <div class="description-item">
+                            <div></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

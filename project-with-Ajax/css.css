@@ -1,0 +1,154 @@
+.container-sm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1920px;
+  height: 100vh;
+  background-color: black;
+}
+.content {
+  justify-content: space-between;
+  display: flex;
+  width: 90%;
+  height: 90%;
+  background-color: #f6f6f8;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.left {
+  border-radius: 25px;
+  width: 25%;
+  object-fit: cover;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+.height {
+  width: 75%;
+  height: 100%;
+  background-color: #f6f6f871;
+}
+.navbar.navbar-light.bg-light {
+  padding: 20px;
+}
+.d-flex {
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+}
+.form-control.me-2 {
+  border-radius: 25px;
+}
+.btn.btn-outline-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+}
+.bi.bi-geo-alt-fill {
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+.image-size {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40%;
+}
+.weather-calendar {
+  height: 30%;
+  align-items: center;
+  justify-content: center;
+}
+.map-image {
+  width: 100%;
+}
+.right {
+  width: 100%;
+}
+.nav.nav-tabs {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  padding: 20px;
+}
+.li-nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-item {
+  width: 30%;
+}
+.profile {
+  justify-content: space-around;
+  display: flex;
+  width: 100%;
+}
+.btn.btn-outline-dark {
+  border-radius: 50%;
+}
+.btn.btn-outline-dark :hover {
+  color: #ffff !important;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+}
+.b_favImg {
+  width: max-content;
+  height: max-content;
+}
+.li-weather{
+  padding-top: 20px;
+  width: 100%;
+  display: flex;
+  align-items:center;
+  justify-content: space-around;
+  height: 30%;
+}
+.card-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+
+}
+.card {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 7 - 20px );
+  height: 70%;
+  padding: 10px;
+}
+p {
+  text-align: center;
+}
+.description-weather{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+}
+.li-description{
+  width: 90%;
+  background-color: rgb(71, 80, 80);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.description-item{
+  width:calc(100% /3 - 10px);
+  height: 100px;
+
+}
