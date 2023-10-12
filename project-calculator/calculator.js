@@ -1,7 +1,6 @@
 function ClickButton() {
     let resultArea = document.getElementById("result");
-    let buttonText = event.target.innerText;
-
+     let buttonText = event.target.innerText;
     if (buttonText === "CE") {
         resultArea.innerText = "0";
     } else if (buttonText === "=") {
