@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css.css">
     <script src='https://cdn.plot.ly/plotly-2.26.0.min.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXV6q7IqT7S9S_vQFu8BwG7T7yOeeYoMw&callback=initMap"
+        async defer></script>
+
     <script src="main.js"></script>
 </head>
 
@@ -18,37 +21,32 @@
             <div class="left">
                 <nav class="navbar navbar-light bg-light">
                     <div class="container-fluid">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline" type="submit">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-crosshair" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8.5.5a.5.5 0 0 0-1 0v.518A7.001 7.001 0 0 0 1.018 7.5H.5a.5.5 0 0 0 0 1h.518A7.001 7.001 0 0 0 7.5 14.982v.518a.5.5 0 0 0 1 0v-.518A7.001 7.001 0 0 0 14.982 8.5h.518a.5.5 0 0 0 0-1h-.518A7.001 7.001 0 0 0 8.5 1.018V.5Zm-6.48 7A6.001 6.001 0 0 1 7.5 2.02v.48a.5.5 0 0 0 1 0v-.48a6.001 6.001 0 0 1 5.48 5.48h-.48a.5.5 0 0 0 0 1h.48a6.002 6.002 0 0 1-5.48 5.48v-.48a.5.5 0 0 0-1 0v.48A6.001 6.001 0 0 1 2.02 8.5h.48a.5.5 0 0 0 0-1h-.48ZM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-                                </svg>
+                        <form class="d-flex" id="searchForm">
+                            <input class="form-control me-2" type="search" placeholder="Search" name="cityName"
+                                aria-label="Search" id="cityName">
+                            <button type="submit" class="btn btn-outline" id="search">
+                                Search
                             </button>
                         </form>
                     </div>
                 </nav>
                 <div class="image-size">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe758Vfz2rFN5BI2vYHqY5ofwO029ovZ0-mw&usqp=CAU"
-                        alt="">
+                    <img id="image-weather" src="" alt="">
                 </div>
                 <div class="weather-calendar">
                     <div class="weather">
-                        <p style="text-align: center" class="display-1">12</p>
+                        <p style="text-align: center" id="tem_C" class="display-3"></p>
                     </div>
                     <div class="calendar">
-                        <p style="text-align: center;" class="display-6">Monday ,16:00</p>
+                        <p class="display-5" style="text-align: center;" id="local-time"></p>
                     </div>
 
                 </div>
-                <div class="map-image">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3939393939393!2d106.69999999999999!3d10.799999999999999!2m3"></iframe>
+                <div class="map-image flex">
+                    <div id="map" class="map">
 
+                    </div>
                 </div>
-
             </div>
             <div class="right">
                 <div class="nav nav-tabs">
@@ -62,134 +60,186 @@
                         <div class="nav-item">
                             <div class="profile">
                                 <button type="button" class="btn btn-outline-dark">°C</button>
-                                <button type="button" class="btn btn-outline-dark">°F </button>
-                                <div class="avatar"><img class="b_favImg"
+                                <button type="button" class="btn btn-outline-dark">°F</button>
+                                <div class="avatar">
+                                    <img class="b_favImg"
                                         src="https://www.bing.com/th?q=Activities+in+Hà+Nội+in+cloudy+weather&w=42&h=42&c=1&o=6&pid=lgWeatherUpsell"
-                                        alt=""></div>
+                                        alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="li-weather">
                     <div class="card-area">
-                        <div class="card">
-                            <p>Sun</p>
+                        <div class="card" id="card-0">
                             <div class="card-body">
-                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
-                                    class="card-img-top" alt="...">
-                                <p class="card-text">15.</p>
+                                <p class="card-title"></p>
+                                <img src="" class="card-img-top" alt="...">
+                                <p class="card-text"></p>
                             </div>
                         </div>
-                        <div class="card">
-                            <p>Mon</p>
+                        <div class="card" id="card-1">
                             <div class="card-body">
-                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
-                                    class="card-img-top" alt="...">
-                                <p class="card-text">12</p>
+                                <p class="card-title"></p>
+                                <img src="" class="card-img-top" alt="...">
+                                <p class="card-text"></p>
                             </div>
                         </div>
-                        <div class="card">
-                            <p>Tue</p>
+                        <div class="card" id="card-2">
                             <div class="card-body">
-                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
-                                    class="card-img-top" alt="...">
-                                <p class="card-text">9</p>
+                                <p class="card-title"></p>
+                                <img src="" class="card-img-top" alt="...">
+                                <p class="card-text"></p>
                             </div>
                         </div>
-                        <div class="card">
-                            <p>Wed</p>
+                        <div class="card" id="card-3">
                             <div class="card-body">
-                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
-                                    class="card-img-top" alt="...">
-                                <p class="card-text">8</p>
+                                <p class="card-title"></p>
+                                <img src="" class="card-img-top" alt="...">
+                                <p class="card-text"></p>
                             </div>
                         </div>
-                        <div class="card">
-                            <p>Thu</p>
+                        <div class="card" id="card-4">
                             <div class="card-body">
-                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
-                                    class="card-img-top" alt="...">
-                                <p class="card-text">5.</p>
+                                <p class="card-title"></p>
+                                <img src="" class="card-img-top" alt="...">
+                                <p class="card-text"></p>
                             </div>
                         </div>
-                        <div class="card">
-                            <p>Fri</p>
+                        <div class="card" id="card-5">
                             <div class="card-body">
-                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
-                                    class="card-img-top" alt="...">
-                                <p class="card-text">4</p>
+                                <p class="card-title"></p>
+                                <img src="" class="card-img-top" alt="...">
+                                <p class="card-text"></p>
                             </div>
                         </div>
-                        <div class="card">
-                            <p>Sat</p>
+                        <div class="card" id="card-6">
                             <div class="card-body">
-                                <img src="https://th.bing.com/th/id/R.770b805d5c99c7931366c2e84e88f251?rik=TqHsCsZOC8Bnqw&pid=ImgRaw&r=0"
-                                    class="card-img-top" alt="...">
-                                <p class="card-text">3</p>
+                                <p class="card-title"></p>
+                                <img src="" class="card-img-top" alt="...">
+                                <p class="card-text"></p>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div class="title display-5">Today's Highlights</div>
-                <!-- <div class="description-weather">
-                    <div class="li-description">
-                        <div class="description-item">
-                            <div class="card mb-3">
-                                <div id="myDiv"></div>
+                <div class="container-fluid ">
+                    <div class="row row-col-2">
+                        <div class="col-md-4">
+                            <div class="description-item col">
+                                <div class="card content">
+                                    <div class="card-body">
+                                        <p class="card-text">UV Index </p>
+                                        <h4 id="uv" class="card-title">6.0</h4>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="description-item">
-                            <div class="card mb-3"></div>
+                        <div class="col-md-4">
+                            <div class="description-item col">
+                                <div class="card content">
+                                    <div class="card-body">
+                                        <p class="card-text">Wind Status</p>
+                                        <h4 id="wind_mph" class="card-title">0.0 km/h</h4>
+                                        <div class="wind-arrow">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z" />
+                                            </svg>
+                                            <span id="dir" class="card-text">N</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="description-item">
-                            <div class="card mb-3"></div>
+                        <div class="col-md-4">
+                            <div class="description-item col">
+                                <div class="card content">
+                                    <div class="card-body">
+                                        <p class="card-text">Sunrise & Sunset</p>
+                                        <div class="info">
+                                            <div class="icon">
+                                                <button class="icon-btn">
+                                                    <div class="up">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-up"
+                                                            viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+                                                        </svg>
+                                                    </div>
+                                                </button>
+                                                <button class="icon-btn">
+                                                    <div class="down">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                            fill="currentColor" class="bi bi-arrow-down"
+                                                            viewBox="0 0 16 16">
+                                                            <path fill-rule="evenodd"
+                                                                d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+                                                        </svg>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                            <div class="classtime">
+                                                <div class="time">
+                                                    <div id="am" class="am">
+                                                        <h6>6:35 AM</h6>
+                                                    </div>
+                                                    <div id="pm" class="pm">
+                                                        <h6>5:42 PM</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="description-item">
-                            <div class="card mb-3"></div>
+                        <div class="col-md-4">
+                            <div class="description-item col">
+                                <div class="card content">
+                                    <div class="card-body">
+                                        <p class="card-text">Humidity</p>
+                                        <h4 id="humidity" class="card-title">60%</h4>
+                                        <p class="card-text">Normal</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="description-item">
-                            <div class="card mb-3"></div>
+                        <div class="col-md-4">
+                            <div class="description-item col">
+                                <div class="card content">
+                                    <div class="card-body">
+                                        <p class="card-text">Visibility</p>
+                                        <h4 id="vis_km" class="card-title">5.2 km</h4>
+                                        <p class="card-text">Average</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="description-item">
-                            <div class="card mb-3"></div>
+                        <div class="col-md-4">
+                            <div class="description-item col">
+                                <div class="card content">
+                                    <div class="card-body">
+                                        <p class="card-text">Air Quality</p>
+                                        <h4 class="card-title" id="airQuality">105</h4>
+                                        <p class="card-text">Unhealthy</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
-                </div> -->
-                <div class="description-weather">
-                    <div class="li-description">
-                        <div class="description-item">
-                            <div class="description-item" id="myDiv"></div>
-                        </div>
-                        <div class="description-item">
-                            <div class="description-item"></div>
-                        </div>
-                        <div class="description-item">
-                            <div></div>
-
-                        </div>
-
-                    </div>
-                    <div class="li-description">
-                        <div class="description-item">
-                            <div></div>
-                        </div>
-                        <div class="description-item">
-                            <div></div>
-                        </div>
-                        <div class="description-item">
-                            <div></div>
-                        </div>
-
-                    </div>
-
                 </div>
-
             </div>
         </div>
     </div>
+
+
+
 </body>
 
 </html>
